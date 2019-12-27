@@ -27,5 +27,4 @@ public class Rol  implements Serializable {
     @Column(name = "estado")
     private int estado;
 
-
 }
