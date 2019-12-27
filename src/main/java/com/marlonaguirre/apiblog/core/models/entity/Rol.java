@@ -1,5 +1,6 @@
 package com.marlonaguirre.apiblog.core.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Data
@@ -27,4 +29,6 @@ public class Rol  implements Serializable {
     @Column(name = "estado")
     private int estado;
 
+    @OneToMany(mappedBy = "rol")
+    private List<Usuario> usuarios;
 }

@@ -31,9 +31,8 @@ public class Usuario implements Serializable {
     @Column(name = "usuario")
     private String usuario;
 
-    @NotEmpty(message = "Debe proporcionar une stado")
     @Column(name = "estado")
-    private int estado;
+    private int estado = 0;
 
     @NotEmpty(message = "Debe proporcionar una contraseña")
     @Column(name = "pass")
@@ -116,5 +115,8 @@ public class Usuario implements Serializable {
         return this.rol;
     }
 
+    public void setRol(Rol rol){
+        this.rol = rol;
+    }
 
 }
